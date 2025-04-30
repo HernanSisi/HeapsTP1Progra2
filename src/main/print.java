@@ -1,30 +1,38 @@
 package main;
-import api.HeapTDA;
-import imp.maxHeap;
+import api.ColaHeapTDA;
+import imp.ListaPrioridadHeap;
+
 public class print {
-    static void mostrarD(HeapTDA heap) { // muestra el heap destruyendo el oroginal
+/*     static void mostrarD(HeapTDA heap) { // muestra el heap destruyendo el oroginal
         while (!heap.vacio()) {
             System.out.print(heap.remover() + "; ");
+        }
+        System.out.println();
+    } */
+    static void mostrarD(ColaHeapTDA heap) { // muestra el heap destruyendo el oroginal
+        while (!heap.vacio()) {
+            System.out.print(heap.obtenerPrioridad() + ", "+ heap.obtenerValor() + "; ");
+            heap.remover();
         }
         System.out.println();
     }
     
     public static void main(String[] args) {
-        HeapTDA heap = new maxHeap();
+        ColaHeapTDA heap = new ListaPrioridadHeap();
         heap.inicializar(100);
-        heap.agregarValor(84);
-        heap.agregarValor(35);
-        heap.agregarValor(86);
-        heap.agregarValor(12);
-        heap.agregarValor(47);
-        heap.agregarValor(53);
-        heap.agregarValor(29);
-        heap.agregarValor(69);
-        heap.agregarValor(10);
-        heap.agregarValor(60);
-        heap.agregarValor(7);
-        System.out.println(heap.removerEn(5));
-        System.out.println(heap.removerEn(8));
+        heap.agregarValor(84,2);
+        heap.agregarValor(35,6);
+        heap.agregarValor(86,2);
+        heap.agregarValor(12,8);
+        heap.agregarValor(47,9);
+        heap.agregarValor(53,10);
+        heap.agregarValor(29,1);
+        heap.agregarValor(69,3);
+        heap.agregarValor(10,12);
+        heap.agregarValor(60,56);
+        heap.agregarValor(7,4);
+        // System.out.println(heap.removerEn(5));
+        // System.out.println(heap.removerEn(8));
         mostrarD(heap);
     }
 
