@@ -2,18 +2,30 @@ package main;
 import api.HeapTDA;
 import imp.minHeap;
 public class print {
+    static void mostrarD(HeapTDA heap) { // muestra el heap destruyendo el oroginal
+        while (!heap.vacio()) {
+            System.out.print(heap.remover() + "; ");
+        }
+        System.out.println();
+    }
+    
     public static void main(String[] args) {
         HeapTDA heap = new minHeap();
         heap.inicializar(100);
-        System.out.println(heap.vacio());
-        heap.agregarValor(5);
-        System.out.println(heap.obtener());
-        heap.agregarValor(3);
-        System.out.println(heap.obtener());
-        heap.agregarValor(8);
-        System.out.println(heap.obtener());
-        heap.agregarValor(1);
-        System.out.println(heap.obtener());
+        heap.agregarValor(84);
+        heap.agregarValor(35);
+        heap.agregarValor(86);
+        heap.agregarValor(12);
+        heap.agregarValor(47);
+        heap.agregarValor(53);
+        heap.agregarValor(29);
+        heap.agregarValor(69);
+        heap.agregarValor(10);
+        heap.agregarValor(60);
+        heap.agregarValor(7);
+        heap.remover();
+        heap.remover();
+        mostrarD(heap);
     }
 
 }

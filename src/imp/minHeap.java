@@ -30,7 +30,32 @@ public class minHeap implements HeapTDA{
 
     @Override
     public int remover() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (vacio()) {
+            return -1;
+        }
+        int min = heap[0];
+        heap[0] = heap[indice - 1];
+        indice--;
+        int aux = 0;
+        while (aux < indice) {
+            int izq = hijoIzq(aux);
+            int der = hijoDer(aux);
+            int menor = aux;
+            if (izq < indice && heap[izq] < heap[menor]) {
+                menor = izq;
+            }
+            if (der < indice && heap[der] < heap[menor]) {
+                menor = der;
+            }
+            if (menor == aux) {
+                break;
+            }
+            int temp = heap[aux];
+            heap[aux] = heap[menor];
+            heap[menor] = temp;
+            aux = menor;
+        }
+        return min;
     }
 
     @Override
