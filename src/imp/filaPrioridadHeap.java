@@ -2,7 +2,7 @@ package imp;
 
 import api.ColaHeapTDA;
 
-public class ListaPrioridadHeap implements ColaHeapTDA{
+public class filaPrioridadHeap implements ColaHeapTDA{
     class Nodo {
         int valor;
         int prioridad;
