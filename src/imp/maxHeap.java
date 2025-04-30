@@ -5,13 +5,13 @@ public class maxHeap implements HeapTDA {
     private int indice;
 
     @Override
-    public void inicializar(int tam) {
+    public void inicializar(int tam) { // O(1)
         heap = new int[tam];
         indice = 0;
     }
 
     @Override
-    public void agregarValor(int valor) {
+    public void agregarValor(int valor) { // O(log n)
         heap[indice] = valor;
         indice++;
         int i = indice - 1;
@@ -25,7 +25,7 @@ public class maxHeap implements HeapTDA {
     }
 
     @Override
-    public int remover() {
+    public int remover() { // O(log n)
         if (vacio()) {
             return -1;
         }
@@ -54,7 +54,7 @@ public class maxHeap implements HeapTDA {
         return max;
     }
     @Override
-    public int removerEn(int i) {
+    public int removerEn(int i) { // O(log n)
         i--;
         if (vacio() || i <= 0 || i > indice) {
             return -1;
@@ -85,28 +85,37 @@ public class maxHeap implements HeapTDA {
     }
 
     @Override
-    public int obtener() {
+    public int obtener() { // O(1)
         return heap[0];
     }
 
     @Override
-    public boolean vacio() {
+    public boolean vacio() { // O(1)
         return indice == 0;
     }
 
     @Override
-    public int padre(int i) {
+    public int padre(int i) { // O(1)
         return (i - 1) / 2;
     }
 
     @Override
-    public int hijoIzq(int i) {
+    public int hijoIzq(int i) { // O(1)
         return (2 * i) + 1;
     }
 
     @Override
-    public int hijoDer(int i) {
+    public int hijoDer(int i) { // O(1)
         return (2 * i) + 2;
     }
-
+    @Override
+    public void heapSort(int[] arr) { // O(n log n)
+        inicializar(arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            agregarValor(arr[i]);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = remover();
+        }
+    }
 }

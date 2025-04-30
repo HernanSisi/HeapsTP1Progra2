@@ -1,6 +1,6 @@
 package main;
 import api.ColaHeapTDA;
-import imp.ListaPrioridadHeap;
+import api.HeapTDA;
 
 public class print {
 /*     static void mostrarD(HeapTDA heap) { // muestra el heap destruyendo el oroginal
@@ -18,7 +18,7 @@ public class print {
     }
     
     public static void main(String[] args) {
-        ColaHeapTDA heap = new ListaPrioridadHeap();
+/*         ColaHeapTDA heap = new ListaPrioridadHeap();
         heap.inicializar(100);
         heap.agregarValor(84,2);
         heap.agregarValor(35,6);
@@ -33,7 +33,13 @@ public class print {
         heap.agregarValor(7,4);
         // System.out.println(heap.removerEn(5));
         // System.out.println(heap.removerEn(8));
-        mostrarD(heap);
+        mostrarD(heap); */
+        HeapTDA heap = new imp.minHeap();
+        int arreglo[] = {27, 83, 14, 59, 68, 3, 92, 41, 76, 11, 35, 60, 99, 5, 48};
+        heap.heapSort(arreglo);
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + ", ");
+        }
     }
 
 }

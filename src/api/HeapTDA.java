@@ -10,4 +10,5 @@ public interface HeapTDA {
     int padre(int i); // O(1) de un hijo obtengo el indice del padre
     int hijoIzq(int i); // O(1) de un padre obtengo el indice del hijo izquierdo
     int hijoDer(int i); // O(1) de un padre obtengo el indice del hijo derecho
+    void heapSort(int[] arr); // O(n log n) ordena el heap
 }
