@@ -9,4 +9,5 @@ public interface HeapTDA {
     int padre(int i); // O(1) de un hijo obtengo el indice del padre
     int hijoIzq(int i); // O(1) de un padre obtengo el indice del hijo izquierdo
     int hijoDer(int i); // O(1) de un padre obtengo el indice del hijo derecho
+    int removerEn(int i); // O(log n) remueve el elemento en la posicion i
 }

@@ -1,6 +1,6 @@
 package main;
 import api.HeapTDA;
-import imp.minHeap;
+import imp.maxHeap;
 public class print {
     static void mostrarD(HeapTDA heap) { // muestra el heap destruyendo el oroginal
         while (!heap.vacio()) {
@@ -10,7 +10,7 @@ public class print {
     }
     
     public static void main(String[] args) {
-        HeapTDA heap = new minHeap();
+        HeapTDA heap = new maxHeap();
         heap.inicializar(100);
         heap.agregarValor(84);
         heap.agregarValor(35);
@@ -23,8 +23,8 @@ public class print {
         heap.agregarValor(10);
         heap.agregarValor(60);
         heap.agregarValor(7);
-        heap.remover();
-        heap.remover();
+        System.out.println(heap.removerEn(5));
+        System.out.println(heap.removerEn(8));
         mostrarD(heap);
     }
 

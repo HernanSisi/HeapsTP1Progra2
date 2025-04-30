@@ -59,6 +59,36 @@ public class minHeap implements HeapTDA{
     }
 
     @Override
+    public int removerEn(int i) {
+        if (vacio() || i <= 0 || i > indice) {
+            return -1;
+        }
+        int min = heap[i];
+        heap[i] = heap[indice - 1];
+        indice--;
+        int aux = i;
+        while (aux < indice) {
+            int izq = hijoIzq(aux);
+            int der = hijoDer(aux);
+            int menor = aux;
+            if (izq < indice && heap[izq] < heap[menor]) {
+                menor = izq;
+            }
+            if (der < indice && heap[der] < heap[menor]) {
+                menor = der;
+            }
+            if (menor == aux) {
+                break;
+            }
+            int temp = heap[aux];
+            heap[aux] = heap[menor];
+            heap[menor] = temp;
+            aux = menor;
+        }
+        return min; 
+    }
+
+    @Override
     public int obtener() {
         return heap[0];
     }
