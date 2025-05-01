@@ -60,7 +60,8 @@ public class minHeap implements HeapTDA{
 
     @Override
     public int removerEn(int i) { // O(log n)
-        if (vacio() || i <= 0 || i > indice) {
+        i--;
+        if (vacio() || i < 0 || i > indice) {
             return -1;
         }
         int min = heap[i];

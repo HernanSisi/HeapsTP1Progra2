@@ -18,7 +18,7 @@ public class print {
     }
     
     public static void main(String[] args) {
-/*         ColaHeapTDA heap = new ListaPrioridadHeap();
+/*         ColaHeapTDA heap = new PrioridadHeap();
         heap.inicializar(100);
         heap.agregarValor(84,2);
         heap.agregarValor(35,6);

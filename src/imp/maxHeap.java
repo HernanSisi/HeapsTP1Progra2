@@ -56,7 +56,7 @@ public class maxHeap implements HeapTDA {
     @Override
     public int removerEn(int i) { // O(log n)
         i--;
-        if (vacio() || i <= 0 || i > indice) {
+        if (vacio() || i < 0 || i > indice) {
             return -1;
         }
         int max = heap[i];
